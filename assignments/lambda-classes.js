@@ -39,6 +39,26 @@ class Student extends Person {
             console.log(current);
         });
     }
+    PRAssignment(subject){
+        console.log(`${this.name} has submitted a PR for ${subject}`);
+    }
+    sprintChallenge(subject){
+        console.log(`${this.name} has begun sprint challenge on ${subject}`);
+    }
+}
+
+class Project_Manager extends Instructor {
+    constructor(obj){
+        super(obj);
+        this.gradClassName = obj.gradClassName;
+        this.favInstructor = obj.favInstructor;
+    }
+    standUp(channel){
+        console.log(`${this.name} announces to ${channel}, @channel standy times!`);
+    }
+    debugsCode(obj, subject){
+        console.log(`${this.name} debugs ${obj.name}'s code on ${subject}`);
+    }
 }
 
 
@@ -65,5 +85,20 @@ const rincewind = new Student({
     favSubjects: ['magic-I', 'magic-II', 'magic-III']
 });
 
+const death = new Project_Manager({
+    name: 'Death',
+    location: 'Outside space time',
+    age: 0,
+    favLanguage: 'none',
+    specialty: 'Collecting souls',
+    catchPhrase: '...',
+    gradClassName: ' ',
+    favInstructor: ' '
+});
+
 // fred.demo('CSS');
 // rincewind.listSubjects();
+// rincewind.PRAssignment(rincewind.favSubjects[0]);
+// rincewind.sprintChallenge(rincewind.favSubjects[1]);
+// death.standUp('WEB23');
+// death.debugsCode(rincewind,rincewind.favSubjects[1]);
